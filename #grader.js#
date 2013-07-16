@@ -69,24 +69,22 @@ if(require.main == module) {
 	.option('-u, --url <url_file>', 'Path to url')
 	.parse(process.argv);
 
+    if (program.file) {
+	var outJson = JSON.stringify(checkHtmlFile(program.file, program.checks), null, 4);
+	console.log(outJson);
+    }
     if (program.url) {
 	rest.get(program.url).on('complete', function(result) {
 	    $ = cheerio.load(result);
-	    fs.readFile(program.checks, function(err, data) {
-		if (err) throw err;
-		var out = {};
-		var checks = JSON.parse(data).sort();
-		for (var ii in checks) {
-		    var present = $(checks[ii]).length > 0;
-		    out[checks[ii]] = present;
-		}
-	    return console.log(JSON.stringify(out, null, 4));
-	    });
+	    console.log($);
+	    var checks = loadChecks(program.check).sort();
+	    var out = {};
+	    for (var ii in checks) {
+		var present = $(checks[ii]).length > 0;
+		out[checks[ii]] = present;
+	    }
+	    return console.log(JSON.stringify(out));
 	});
-    }
-    else if (program.file) {
-	var outJson = JSON.stringify(checkHtmlFile(program.file, program.checks), null, 4);
-	console.log(outJson);
     }
 } else {
     exports.checkHtmlFile = checkHtmlFile;
