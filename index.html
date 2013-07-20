@@ -124,22 +124,26 @@
       </div>
     </div>
 
+    <!-- row-fluid inside containers to achieve a resizable layout. -->
+    <!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/ -->
+    <!-- http://stackoverflow.com/a/12270322 -->
     <div class="container">
-      <div class="row heading">
+      <div class="row-fluid heading">
 	<div class="span12">
-	  <h1>Bitstarter Title</h1>
+	  <h1>The Ike Method</h1>
 	</div>
       </div>
-      <div class="row subheading">
+      <div class="row-fluid subheading">
 	<div class="span12">
-	  <p class="lead">This is my first bitstarter project.</p>
+	  <p class="lead">Get things done like Ike.</p>
 	</div>
       </div>
-      <div class="row pitch">
-	<div class="span6 video">
-	  Video
+      <div class="row-fluid pitch">
+	<div class="span5 offset1 video">
+	  <img class="img-polaroid" src="http://placehold.it/480x300">
 	</div>
-	<div class="span6">
+
+	<!-- We define a new 'actions' div to contain statistics, order, and share buttons.-->
 	  <div class="thermometer">
 	    Thermometer
 	  </div>
