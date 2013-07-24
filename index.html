@@ -16,13 +16,13 @@
       /* Large desktop */
       @media (min-width: 980px) {
       body {
-      padding-top: 60px; 
+      padding-top: 110px; 
       }
       .linediv-l {
-      border-right: 1px white solid;
+      border-right: 1px #1C140D solid;
       }
       .linediv-r {
-      border-left: 1px white solid;
+      border-left: 1px #1C140D solid;
       }
       }
 
@@ -32,14 +32,31 @@
       padding: 2.5% 10%;
       }
       .linediv-l {
-      border-bottom: 1px white solid;
+      border-bottom: 1px #1C140D solid;
       }
       .linediv-r {
-      border-left: 1px white solid;
+      border-left: 1px #1C140D solid;
       }
       }
 
+
       /* All form factors */
+
+      /* Navbar */
+
+      .navbar .navbar-inner {
+      background-image: linear-gradient(to bottom, #F2E9E1, #F2E9E1);
+      border-color: rgb(170, 160, 160);
+      padding: 2%;
+      }
+      .navbar .brand {
+      color: #1C140D;
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+      font-size: 2.5em;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      }
 
       /* Main body and headings */
       body {
@@ -67,15 +84,40 @@
       padding: 2% 0%;
       }
       .actions {
-      background-color: #343434;
+      background-color: #CCC4BD;
       padding: 3% 0%;
       }
       .video, .thermometer, .order, .social, .statistics {
       text-align: center;
       }
       .statistics h3, .statistics p {
-      color: white;
+      color: #1C140D;
       }
+      .btn-preorder {
+      color: #FFFFFF;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+      background-color: #8FB417;
+      *background-color: #8FB417;
+      background-image: -moz-linear-gradient(top, #CBE86B, #8FB417);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#CBE86B), to(#8FB417));
+      background-image: -webkit-linear-gradient(top, #CBE86B, #8FB417);
+      background-image: -o-linear-gradient(top, #CBE86B, #8FB417);
+      background-image: linear-gradient(to bottom, #CBE86B, #8FB417);
+      background-repeat: repeat-x;
+      border-color: #8FB417;
+      border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CBE86B', endColorstr='#8FB417', GradientType=0);
+      filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-preorder:hover,
+.btn-preorder:active,
+.btn-preorder.active,
+.btn-preorder.disabled,
+.btn-preorder[disabled] {
+      color: #FFFFFF;
+      background-color: #8FB417;
+      *background-color: #003bb3;
+}
 
       /* Marketing Copy and Footer */
 
@@ -83,7 +125,7 @@
       padding-top: 2.5%;
       padding-bottom: 2.5%;
       text-align: justify;
-      }
+      }x
       .asset {
       padding: 2.5% 0%;
       }
@@ -112,13 +154,11 @@
 	    <span class="icon-bar"></span>
 	    <span class="icon-bar"></span>
 	  </button>
-	  <a class="brand" href="#">Bitstarter</a>
+	  <a class="brand heading" href="#">The Ike Method</a>
 	  <div class="nav-collapse collapse">
-	    <ul class="nav">
-	      <li class="active"><a href="#">Home</a></li>
+	  <!---<ul class="nav pull-right">
 	      <li><a href="#about">About</a></li>
-	      <li><a href="#contact">Contact</a></li>
-	    </ul>
+	      </ul>--->
 	  </div><!-- /.nav-collapse -->
 	</div>
       </div>
@@ -128,14 +168,9 @@
     <!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/ -->
     <!-- http://stackoverflow.com/a/12270322 -->
     <div class="container">
-      <div class="row-fluid heading">
-	<div class="span12">
-	  <h1>The Ike Method</h1>
-	</div>
-      </div>
       <div class="row-fluid subheading">
 	<div class="span12">
-	  <p class="lead">Getting things done -- the presidential way.</p>
+	  <p class="lead">Get things done -- the presidential way.</p>
 	</div>
       </div>
       <div class="row-fluid pitch">
@@ -168,13 +203,13 @@
 	  <div class="span10 offset1">
 	    <!-- bootstrap progress bar -->
 	    <div class="thermometer progress active">
-	      <div class="bar bar-success" style="width: 60%;"></div>
-	      <div class="bar bar-warning" style="width: 40%;"></div>
+	      <div class="bar bar-success" style="width: 60%; background-image: linear-gradient(to bottom, #CBE86B, #8FB417);"></div>
+	      <div class="bar bar-warning" style="width: 40%; background-image: linear-gradient(to bottom, rgb(244, 252, 218), rgb(197, 201, 184));"></div>
 	    </div>
 	  </div>
 	  <div class="span6 offset3 order">
 	    <!-- Standard bootstrap button -->
-	    <button class="btn btn-success btn-large">Preorder</button>
+	    <button class="btn btn-preorder btn-large">Preorder</button>
 	  </div>
 	  <div class="span8 offset2 social">
 	    <!-- social buttons are not included in default bootstrap -->
@@ -187,11 +222,15 @@
       <!-- Marketing section -->
       <div class="row-fluid section1">
 	<div class="span5 offset1 asset">
-	  <img class="img-polaroid" src="http://placehold.it/480x300">
-	</div>
+	</div>	
 	<div class="span5 copy">
 	  <p>
-	    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus malesuada justo id odio molestie dignissim. Aliquam sit amet augue pharetra, ultricies justo non, rhoncus magna. Aliquam adipiscing lorem ac velit venenatis luctus. Morbi mollis eros quis metus auctor, sed fringilla ipsum ultrices. Ut eu tincidunt urna. Ut eu felis non mi adipiscing ornare sed a tortor. Phasellus vel leo sit amet orci dapibus egestas. Vestibulum sed lorem congue justo pulvinar vestibulum. Etiam laoreet quis risus faucibus gravida. Sed aliquet elit non metus viverra, vitae tristique odio sollicitudin. Vestibulum lorem quam, ullamcorper eget metus a, tempus aliquam magna. Vestibulum vitae magna vehicula, vestibulum risus et, consequat risus. Pellentesque at convallis justo. Duis pharetra, felis sit amet eleifend iaculis, ligula justo pellentesque eros, posuere ornare tellus massa id neque.
+	  "I've tried dozens of productivity apps... but none of them help me focus."
+	  </p>
+	  <p>
+	  That was the same disgruntled situation I was in before I discovered President Eisenhower's secret weapon: the urgent-importance matrix. Just one matrix, and yet it helped make prioritizing and executing tasks a sinch at work, home, and play. Eisenhower was a man of reknowned prowess on the battlefield and in the Oval Office. His matrix is as efficient and tactical as he was. 
+	  </p>
+	  <p> Lo and behold, the Ike Method reincarnates Eisenhower's secret weapon in a targeted to-do list app that helps you focus on what's important and urgent. It's tough to keep track of all those matrices on paper, so we brought it to your iPhone.
 	  </p>
 	</div>
       </div>
